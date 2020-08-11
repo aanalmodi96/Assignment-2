@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+
+{% block title %}Results{% endblock %}
+
+{% block content %}
+    <h1>DAY NIGHT TIMINGS</h1>
+
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Count at Night</th>
+                <th>Count at Day</th>
+                <th>Total Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ night }}</td>
+                <td>{{ day }}</td>
+                <td>{{ total }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,7 @@
+applications:
+- name: assignment-2
+  memory: 256M
+  command: python app.py
+  random-route: true
+  services:
+  - sqldatabase

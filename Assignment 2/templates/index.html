@@ -1,0 +1,110 @@
+{% extends "main.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <h1>Earthquakes of the World!</h1>
+    <p>
+        This app is named "{{ app["application_name"] }}". You can search for information on earthquakes on cities. Use the local name.
+    </p>
+
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card-panel">
+                <form action="{{ url_for('greater_than_mag_route') }}" method="get">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input name="mag" id="Mag" type="text">
+                            <label for="Mag">Mag</label>
+                        </div>
+                        <div class="col s6">
+                            <button type="submit" class="btn blue">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card-panel">
+                <form action="{{ url_for('min_max_mag_route') }}" method="get">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input name="min" id="min" type="text">
+                            <label for="min">Min Mag</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input name="max" id="max" type="text">
+                            <label for="max">Max Mag</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input name="start_date" id="start_date" type="text" class="datepicker">
+                            <label for="start_date">Date From</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input name="end_date" id="end_date" type="text" class="datepicker">
+                            <label for="end_date">Date To</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <button type="submit" class="btn blue">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card-panel">
+                <form action="{{ url_for('find_in_radius_route') }}" method="get">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input name="lat" id="lat" type="text">
+                            <label for="lat">Latitude</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input name="lng" id="lng" type="text">
+                            <label for="lng">Longitude</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input name="radius" id="radius" type="text">
+                            <label for="radius">Radius</label>
+                        </div>
+                        <div class="col s6">
+                            <button type="submit" class="btn blue">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card-panel">
+                <form action="{{ url_for('day_night_route') }}" method="get">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input name="mag" id="mag" type="text">
+                            <label for="mag">Mag</label>
+                        </div>
+                        <div class="col s6">
+                            <button type="submit" class="btn blue">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
